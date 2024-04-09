@@ -52,3 +52,9 @@ export const NewLinkForm = styled.div`
     right: 0;
   }
 `;
+
+export const EmptyMessage = styled.p`
+  margin: 50px 0;
+  width: 100%;
+  text-align: center;
+`;

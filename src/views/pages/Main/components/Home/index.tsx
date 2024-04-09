@@ -68,31 +68,37 @@ export const Home = () => {
         </Styled.NewLinkForm>
       </Styled.NewLink>
 
-      <Styled.List>
-        <Styled.ListTitle>Lista de links gerados</Styled.ListTitle>
+      {!links?.length && (
+        <Styled.EmptyMessage>Nenhum link encontrado!</Styled.EmptyMessage>
+      )}
 
-        {links.map((link, index) => (
-          <Styled.ListItem key={link.id}>
-            <Styled.ListItemDelete
-              onClick={() =>
-                deleteLinkService({
-                  linkId: link.id,
-                  callbackSuccess: handleUpdateListLinks,
-                })
-              }
-            >
-              X
-            </Styled.ListItemDelete>
-            <Styled.ListItemContainer>
-              Link {index + 1}:{" "}
-              <Styled.ListItemLink
-                href={link.url}
-                target="_blank"
-              >{`${link.url}`}</Styled.ListItemLink>
-            </Styled.ListItemContainer>
-          </Styled.ListItem>
-        ))}
-      </Styled.List>
+      {!!links?.length && (
+        <Styled.List>
+          <Styled.ListTitle>Lista de links gerados</Styled.ListTitle>
+
+          {links.map((link, index) => (
+            <Styled.ListItem key={link.id}>
+              <Styled.ListItemDelete
+                onClick={() =>
+                  deleteLinkService({
+                    linkId: link.id,
+                    callbackSuccess: handleUpdateListLinks,
+                  })
+                }
+              >
+                X
+              </Styled.ListItemDelete>
+              <Styled.ListItemContainer>
+                Link {index + 1}:{" "}
+                <Styled.ListItemLink
+                  href={link.url}
+                  target="_blank"
+                >{`${link.url}`}</Styled.ListItemLink>
+              </Styled.ListItemContainer>
+            </Styled.ListItem>
+          ))}
+        </Styled.List>
+      )}
     </Styled.Container>
   );
 };
