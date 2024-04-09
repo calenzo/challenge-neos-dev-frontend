@@ -21,8 +21,9 @@ export const onSubmit = async ({
       password2: values.confirmPassword,
     },
     callbackSuccess: (response: any) => {
-      console.log("response", response);
-      callbackSuccess();
+      if (response?.success) {
+        callbackSuccess();
+      }
       formikHelpers.setSubmitting(false);
     },
     callbackError: () => {
