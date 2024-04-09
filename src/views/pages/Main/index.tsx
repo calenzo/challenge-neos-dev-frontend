@@ -19,14 +19,14 @@ export const Main = () => {
       setModals({
         login: false,
         register: true,
-        home: true,
+        home: false,
       });
     },
     openLogin: () => {
       setModals({
         login: true,
         register: false,
-        home: true,
+        home: false,
       });
     },
   };
