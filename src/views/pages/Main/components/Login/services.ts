@@ -13,14 +13,13 @@ export const onSubmit = async ({
 }) => {
   formikHelpers.setSubmitting(true);
 
-  OAuth.authenticateUser({
+  await OAuth.authenticateUser({
     username: values.username,
     password: values.password,
     setUser: () => {},
-    callbackSuccess: (response) => {
+    callbackSuccess: () => {
       callbackSuccess();
       formikHelpers.setSubmitting(false);
-      console.log("response", response);
     },
     callbackError: () => {
       formikHelpers.setSubmitting(false);

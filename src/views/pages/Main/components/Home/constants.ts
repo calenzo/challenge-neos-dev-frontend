@@ -18,5 +18,5 @@ export const initialValues = {
 
 export const validationSchema = object().shape({
   [formModel.phone_number.name]: string().required(),
-  [formModel.message.name]: string().required(),
+  [formModel.message.name]: string().optional(),
 });

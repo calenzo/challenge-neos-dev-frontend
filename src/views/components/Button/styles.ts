@@ -18,6 +18,6 @@ export const ButtonElement = styled.button`
   &:disabled {
     cursor: not-allowed;
     border: none;
-    opacity: 0.9;
+    opacity: 0.4;
   }
 `;
