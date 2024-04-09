@@ -37,6 +37,7 @@ export const Login = ({
           value={values[formModel.password.name]}
           onChange={handleChange}
           width="300px"
+          type="password"
         />
 
         <Styled.WrapperButtons>

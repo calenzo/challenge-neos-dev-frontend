@@ -37,6 +37,7 @@ export const Register = ({
           value={values[formModel.password.name]}
           onChange={handleChange}
           width="300px"
+          type="password"
         />
         <Input
           name={formModel.confirmPassword.name}
@@ -44,6 +45,7 @@ export const Register = ({
           value={values[formModel.confirmPassword.name]}
           onChange={handleChange}
           width="300px"
+          type="password"
         />
 
         <Styled.WrapperButtons>
